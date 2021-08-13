@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Voicemail Settings API</title>
+        <link rel='stylesheet' href='../../assets/styles/styles.css'>
+    </head>
+    <body>
+        <div id="nav-bar">
+            <input id="logout" type="button" value="Logout">
+            <a href="voice-menu.html"> Back to Voice menu </a>
+        </div>
+
+        <div>
+            <h2>Voicemail Settings API</h2>    
+            <section>
+                    <h3>Greeting Content</h3>
+                <div>
+                    Get Default Greeting Content
+                    <button id='getDefaultGreetingContentMp3'>mp3</button>
+                    <button id='getDefaultGreetingContentOgg'>ogg</button>
+                </div>
+                <div>
+                    Get Custom Greeting Content
+                    <button id='getCustomGreetingContentMp3'>mp3</button>
+                    <button id='getCustomGreetingContentOgg'>ogg</button>
+                </div>
+                <div>
+                <button id='uploadGreetingContent'>Upload Greeting Content</button>
+                <input type="file" id='greetingFile' >
+                <div class="tooltip">Help
+                    <span class="tooltiptext">Select the file before clicking the upload greeting content button</span>
+                </div>
+                </div>
+                <div>
+                    <button id='resetGreetingContent'>Reset Greeting Content</button>
+                </div>
+                <div>
+                    <button id='getVoicemailUsage'>Get Voicemail Usage</button>
+                </div>
+            </section>
+            <section>
+                <h3>Voicemail user settings</h3>
+                <div>
+                    <button id='getUserSettings'>Get User Settings</button>
+                </div>
+                <div class='box'>
+                    <button id='updateUserSettings'>Update User Settings</button>
+                <div>Pin
+                    <input id="pin" placeholder="pin"></input>
+                </div>
+                <div>HasCustomGreeting
+                    <select id="hasCustomGreeting">
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                </div>
+                <div>IsTranscriptionPermitted
+                    <select id="isTranscriptionPermitted">
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                </div>
+                <div>EnableTranscription
+                    <select id="enableTranscription">
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                </div>
+                <div>ReceiveEmailNotifications
+                    <select id="receiveEmailNotifications">
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                </div>
+                <div>Emails<input id="emails" placeholder="emails"></input></div>
+                <div>IncludeVoiceMail
+                    <select id="includeVoiceMail">
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                </div>
+                </div>
+            </section>
+            <div>
+                <h3>Output: </h3>
+                <button id='clearLog'>Clear</button>
+                <pre id='out'></pre>
+            </div> 
+        </div>
+        <script src='../../assets/log.js'></script>
+        <script src='../../assets/pkce-auth-session-manager.js'></script>
+        <script src='../../assets/make-request-factory.js'></script>
+        <script src='voice-api.js'></script>
+        <script src='assets/voicemail-settings.js'></script>
+    </body>
+</html>

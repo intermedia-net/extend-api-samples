@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Voice calls API samples</title>
+        <link rel='stylesheet' href='../../assets/styles/styles.css'>
+    </head>
+    <body>
+        <div id="nav-bar">
+            <input id="logout" type="button" value="Logout">
+            <a href="voice-menu.html"> Back to Voice menu </a>
+        </div>
+
+        <div class="content">
+            <div class="block">
+                <h3>Subscription</h3>
+                <div class="text-info">
+                    Firstly, we need to create a new subscription and connect to the notification channel:
+                </div>
+                <button id='subscribe-hub'>Subscribe hub</button>
+                <a class="link-to-guide" 
+                    href="https://developer.intermedia.com/api/spec/calling/index.html#dev-guide-notifications-hub-guide" 
+                    target="_blank">Notification Hub guide</a>
+            </div>
+
+            <div class="block">
+                <h3>Devices</h3>
+                <div class="text-info">
+                    To make a call, we need to select our device:
+                </div>
+                <button id='get-devices'>Get devices</button>
+                <a class="link-to-guide" 
+                    href="https://developer.intermedia.com/api/spec/calling/index.html#get-/devices" 
+                    target="_blank">Get devices guide</a>
+            </div>
+            
+            <div id="outgoing-calls-window">
+                <h3>Outgoing calls</h3>
+
+                <div class="text-info">
+                    Select the device and enter the phone number you want to call: 
+                </div>
+                <div class="flex-row">
+                    <div id='devices-wrapper'></div>
+                    <input id='phone-number' type="tel" size="20" placeholder="phone number">
+                    <button id='make-call'>Make call</button>
+                    <a class="link-to-guide" 
+                        href="https://developer.intermedia.com/api/spec/calling/index.html#post-/voice/v2/calls" 
+                        target="_blank">Make call guide</a>
+                </div>
+
+                <table id="outgoing-calls-table" class="calls-table">
+                    <tr class="calls-table-header">
+                        <th>Status</th>
+                        <th>Call ID</th>
+                    </tr>
+                </table>
+
+                <div class="text-info">
+                    To complete an outgoing call take its callId from the table above: 
+                </div>
+                <div class="flex-row">
+                    <input id='terminate-call-id' size="20" placeholder="call Id">
+                    <button id='terminate-call' class="show-during-call">Terminate call</button>
+                    <a class="link-to-guide" 
+                        href="https://developer.intermedia.com/api/spec/calling/index.html#delete-/voice/v2/calls/{callId}" 
+                        target="_blank">Terminate call guide</a>
+                </div>
+    
+                <div class="text-info">
+                    To transfer an outgoing call take its callId from the table above and enter the phone number you want to call: 
+                </div>
+                <div class="flex-row">
+                    <input id='transfer-phone-number' type="tel" size="20" placeholder="transfer phone number">
+                    <input id='cur-call-id' size="20" placeholder="current call Id">
+                    <button id='transfer-call'>Transfer call</button>
+                    <a class="link-to-guide" 
+                        href="https://developer.intermedia.com/api/spec/calling/index.html#post-/voice/v2/calls/{callId}/transfer" 
+                        target="_blank">Transfer call guide</a>
+                </div>
+
+                <div class="text-info">
+                    To make warm transfer take 2 callId from the table above: 
+                </div>
+                <div class="flex-row">
+                    <input id='warm-transfer-call-id-1' size="20" placeholder="call Id 1">
+                    <input id='warm-transfer-call-id-2' size="20" placeholder="call Id 2">
+                    <button id='warm-transfer-call'>Warm transfer call</button>
+                    <a class="link-to-guide" 
+                        href="https://developer.intermedia.com/api/spec/calling/index.html#post-/voice/v2/calls/{callId}/merge" 
+                        target="_blank">Warm transfer call guide</a>
+                </div>
+            </div>
+
+            <div id="incoming-calls-window">
+                <h3>Incoming calls</h3>
+
+                <table id="incoming-calls-table" class="calls-table">
+                    <tr class="calls-table-header">
+                        <th>Status</th>
+                        <th>Call ID</th>
+                    </tr>
+                </table>
+
+                <div class="text-info">
+                    To reject an incoming call take its callId from the table above: 
+                </div>
+                <div class="flex-row">
+                    <input id='cancel-call-id' type="tel" size="20" placeholder="call Id">
+                    <button id='cancel-call'>Cancel call</button>
+                    <a class="link-to-guide" 
+                        href="https://developer.intermedia.com/api/spec/calling/index.html#post-/voice/v2/calls/{callId}/cancel" 
+                        target="_blank">Cancel call guide</a>
+                </div>
+            </div>
+
+        </div>
+
+        <script src='../../assets/jwt-decode.js'></script>
+        <script src='../../assets/log.js'></script>
+        <script src='../../assets/microsoftSignalr.js'></script>
+        <script src='../../assets/pkce-auth-session-manager.js'></script>
+        <script src='../../assets/make-request-factory.js'></script>
+        <script src='voice-api.js'></script>
+        <script src='assets/calls.js'></script>
+    </body>
+</html>
+

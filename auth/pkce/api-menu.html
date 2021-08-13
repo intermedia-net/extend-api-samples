@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>API menu</title>
+        <link rel='stylesheet' href='../../assets/styles/styles.css'>
+    </head>
+    <body>
+        <div id="nav-bar">
+            <input id="logout" type="button" value="Logout">
+        </div>
+
+        <div>
+            <a href="../../api/voice/voice-menu.html"> Voice </a>
+        </div>
+
+        <div>
+            <a href="../../api/meeting/meetings.html"> Meetings </a>
+        </div>
+
+        <div>
+            <a href="../../api/address-book/address-book.html"> Address book </a>
+        </div>
+
+        <script src='../../assets/pkce-auth-session-manager.js'></script>
+        <script>
+            if(!isAuthorized()){
+                window.location.href = "../../auth/pkce/auth.html"
+            }
+            
+            document.getElementById('logout').addEventListener("click", () => logout(), false);
+        </script>
+    </body>
+</html>
+

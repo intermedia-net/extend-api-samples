@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Redirect page</title>
+    <link rel='stylesheet' href='../../assets/styles/styles.css'>
+</head>
+
+<body>
+    <div id="nav-bar">
+        <input id="authAgain" type="button" value="Authorize again">
+    </div>
+    <pre id="out"></pre>
+
+    <script src='../../assets/oidc-client.js'></script>
+    <script src='../../assets/log.js'></script>
+    <script src='../../assets/pkce-auth-session-manager.js'></script>
+    <script src='auth-code-flow-pkce-api.js'></script>
+    <script src='assets/redirect-page.js'></script>
+    <script>
+        document.getElementById('authAgain').addEventListener("click", () => window.location.href = "auth.html", false);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Auth Client Credentials Flow (S2S)</title>
+        <link rel='stylesheet' href='../../assets/styles/styles.css'>
+    </head>
+    <body>
+        <a href="../../index.html"> Back to homepage </a> <br>
+
+        <div id="auth-window" class="content">
+            <h3>Authorization</h3>
+            <ul>
+                <li><label>client_id: </label><input type="text" id="client-id"  placeholder="https://demo.identityserver.io/"/></li>
+                <li><label>client_secret: </label><input type="text" id="client-secret"  /></li>
+                <li><label>scope: </label><input type="text" id="scope"  placeholder="openid offline_access"/></li>
+            </ul>
+            <button id="authorization"> Authorization </button>
+            <a class="link-to-guide" 
+                href="https://developer.intermedia.com/api/spec/calling/index.html#dev-guide-auth-guide" 
+                target="_blank">Authorization guide</a>
+        </div>
+    </body>
+    <script src='../../assets/jwt-decode.js'></script>
+    <script src="../../assets/s2s-auth-session-manager.js"></script>
+    <script src='../../assets/make-request-factory.js'></script>
+    <script src='auth-s2s-api.js'></script>
+    <script src='assets/auth.js'></script>
+</html>

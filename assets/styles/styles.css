@@ -1,0 +1,192 @@
+#auth-window input {
+    width: 500px;
+}
+
+#auth-window label {
+    display: inline-block;
+    width: 100px;
+}
+
+#auth-window li {
+    padding: 4px;
+}
+
+#out {
+    padding: 10px;
+    width: 100%;
+    background-color: lightgray;
+}
+
+.content *{
+    width: auto;
+}
+
+.flex-row{
+    margin: 20px 0;
+    display: flex;
+    flex-direction: row;   
+}
+    .flex-row *{
+        margin-right: 5px;
+    }
+
+.calls-table{
+    text-align: center;
+    margin-bottom: 15px;
+}
+    .calls-table th, .calls-table td{
+        border: 1px solid black;
+        width: 300px;
+        padding: 2px 4px;
+    }
+
+.link-to-guide{
+    margin-left: 10px;
+}
+
+.block{
+    margin: 10px 0;
+}
+
+#get-avatar-output img, #get-multiple-avatars-output img{
+    margin: 5px 5px 5px 0;
+}
+
+.text-info{
+    margin: 3px 0;
+    font-style: italic;
+}
+
+section{
+    margin: 15px 0;
+}
+
+#get-call-recs-form{
+    margin: 10px 0;
+}
+
+.call-recs-block{
+    margin: 10px 0;
+}
+    .call-recs-block a{
+        display: block;
+        margin: 3px 0;
+    }
+
+.input-field{
+    margin: 8px 2px;
+}
+    .input-field input{
+        margin-left: 4px;
+    }
+
+.recs-table{
+    text-align: center;
+}
+    .recs-table th, .recs-table td{
+        border: 1px solid black;
+        padding: 2px 4px;
+    }
+
+#call-recs-navbar button{
+    cursor: pointer;
+    padding: 1px 5px;
+    font-size: 0.7em;
+}
+
+.link-to-guide {
+    margin-left: 10px !important;
+    display: inline !important;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+  
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+  
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+.functions{
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 0 1px 0 1px;
+}
+
+.box{
+    border: 1px solid black;
+    padding: 2px;
+}
+
+details {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: .5em .5em 0;
+}
+
+summary {
+    font-weight: bold;
+    margin: -.5em -.5em 0;
+    padding: .5em;
+}
+
+details[open] {
+    padding: .5em;
+}
+    details[open] summary {
+        border-bottom: 1px solid #aaa;
+        margin-bottom: .5em;
+    }
+
+input[type=checkbox]{
+  cursor: pointer;
+  padding: 10px;
+  width: 20px;
+}
+
+button, input[type=button]{
+    cursor: pointer;
+}
+
+#nav-bar{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+    #nav-bar *{
+        margin-bottom: 3px;
+    }
+
+    #nav-bar #logout{
+        margin-bottom: 20px;
+    }

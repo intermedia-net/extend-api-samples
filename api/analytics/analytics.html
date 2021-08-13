@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Analytics API</title>
+        <link rel='stylesheet' href='../../assets/styles/styles.css'>
+    </head>
+    <body>
+        <div id="nav-bar">
+            <input id="logout" type="button" value="Logout">
+            <a href="../../auth/s2s/api-menu.html"> Back to API menu </a>
+        </div>
+
+        <section>
+            <div class='box'>
+                <button id='getDetailedCalls'>Get Detailed Calls</button>
+                <input type="datetime-local" value="yyyy-MM-ddThh:mm:ssZ" step="1" id="dateFromDetailedCalls"></input>
+                <input type="datetime-local" value="yyyy-MM-ddThh:mm:ssZ" step="1" id="dateToDetailedCalls"></input>    
+                <div> chargeable
+                    <select id="chargeable">
+                        <option value='select'>Select</option>
+                        <option value='yes'>yes</option>
+                        <option value='no'>no</option>
+                    </select>
+                </div>
+                <div> callAttributes
+                    <select id="bound">
+                        <option value='select'>Select</option>
+                        <option value='inbound'>inbound</option>
+                        <option value='outbound'>outbound</option>
+                    </select>
+                    <select id='status'>
+                        <option value='select'>Select</option>
+                        <option value='internal'>internal</option>
+                        <option value='answered'>answered</option>
+                        <option value='unanswered'>unanswered</option>
+                    </select>
+                    <div class="tooltip">Help
+                        <span class="tooltiptext">If you use call Attributes, both parameters should be chosen</span>
+                    </div>
+                </div>
+                <details>
+                    <summary>Optional settings
+                        <a href='https://developer.intermedia.com/api/spec/analytics/index.html#post-/analytics/calls/call/detail'>Guide</a>
+                    </summary>
+                    <div>timezone
+                        <input id="timezone" placeholder="timezone"></input>
+                    </div>
+                    <div> sortColumn
+                        <select id="sortColumn">
+                            <option value='from'>from</option>
+                            <option value='to'>to</option>
+                            <option value='start'>start</option>
+                            <option value='duration'>duration</option>
+                            <option value='group'>group</option>
+                            <option value='direction'>direction</option>
+                            <option value='chargeable'>chargeable</option>
+                            <option value='charge'>charge</option>
+                            <option value='invoicePeriod'>invoicePeriod</option>
+                            <option value='chargeableDuration'>chargeableDuration</option>
+                            <option value='freeMinutesUsed'>freeMinutesUsed</option>
+                            <option value='freeMinutesQuota'>freeMinutesQuota</option>
+                        </select>
+                    </div>
+                    <div> descending
+                        <select id="descending">
+                            <option value='true'>true</option>
+                            <option value='false'>false</option>
+                        </select>
+                    </div>
+                    <div>offset
+                        <input id="offset" placeholder="offset"></input>
+                    </div>
+                    <div>size
+                        <input id="getDetailedCallsSize" placeholder="size"></input>
+                    </div>
+                    <div>accountId
+                        <input id="getDetailedCallsAccountId" placeholder="accountId"></input>
+                        <div class="tooltip">Help
+                            <span class="tooltiptext">Used for requests for Partner accounts only </span>
+                        </div>
+                    </div>
+                </details>
+            </div>
+            <div class='box'>
+                <button id='getUserCalls'>Get User Calls</button>
+                <input type="datetime-local" value="yyyy-MM-ddThh:mm:ss.SSSZ" step="1" id="dateFromUserCalls"></input>
+                <input type="datetime-local" value="yyyy-MM-ddThh:mm:ss.SSSZ" step="1" id="dateToUserCalls"></input>    
+                <div>userIds<input id='userIds' placeholder='userIds'></input></div>
+                <details>
+                    <summary>Optional settings
+                        <a href='https://developer.intermedia.com/api/spec/analytics/index.html#post-/analytics/calls/user'>Guide</a>
+                    </summary>
+                    <div>timezone
+                        <input id="getUserCallsTimezone" placeholder="timezone"></input>
+                    </div>
+                    <div>accountId
+                        <input id="getUserCallsAccountId" placeholder="accountId"></input>
+                        <div class="tooltip">Help
+                            <span class="tooltiptext">Used for requests for Partner accounts only</span>
+                        </div>
+                    </div>
+                </details>
+            </div>
+            <div class='box'>
+                <button id='getUserFilters'>Get User Filters</button>
+                <input type="datetime-local" value="yyyy-MM-ddThh:mm:ssZ" step="1" id="dateFromUserFilters"></input>
+                <input type="datetime-local" value="yyyy-MM-ddThh:mm:ssZ" step="1" id="dateToUserFilters"></input>    
+                <details>
+                    <summary>Optional settings
+                        <a href='https://developer.intermedia.com/api/spec/analytics/index.html#post-/analytics/calls/user/filters'>Guide</a>
+                    </summary>
+                    <div>timezone
+                        <input id="getUserFiltersTimezone" placeholder="timezone"></input>
+                    </div>
+                    <div>accountId
+                        <input id="getUserFiltersAccountId" placeholder="accountId"></input>
+                        <div class="tooltip">Help
+                            <span class="tooltiptext">Used for requests for Partner accounts only </span>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </section>
+        <br><br>
+        <div>
+            <h3>Output: </h3>
+            <button id='clearLog'>Clear</button>
+            <pre id='out'></pre>
+        </div>
+    </body>
+    <script src='../../assets/log.js'></script>
+    <script src='../../assets/s2s-auth-session-manager.js'></script>
+    <script src='../../assets/make-request-factory.js'></script>
+    <script src='analytics-api.js'></script>
+    <script src='assets/analytics.js'></script>
+</html>

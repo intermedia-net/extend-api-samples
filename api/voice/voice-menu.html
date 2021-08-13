@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>API menu</title>
+        <link rel='stylesheet' href='../../assets/styles/styles.css'>
+    </head>
+    <body>
+        <div id="nav-bar">
+            <input id="logout" type="button" value="Logout">
+            <a href="../../auth/pkce/api-menu.html"> Back to API menu </a>
+        </div>
+
+        <div>
+            <a href="calls.html"> Сalls </a>
+        </div>
+
+        <div>
+            <a href="voicemails.html"> Voicemails </a>
+        </div>
+
+        <div>
+            <a href="voicemail-settings.html"> Voicemail settings </a>
+        </div>
+
+        <script src='../../assets/pkce-auth-session-manager.js'></script>
+        <script>
+            if(!isAuthorized()){
+                window.location.href = "../../auth/pkce/auth.html"
+            }
+            
+            document.getElementById('logout').addEventListener("click", () => logout(), false);
+        </script>
+    </body>
+</html>
+

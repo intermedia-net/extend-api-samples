@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Address book samples</title>
+        <link rel='stylesheet' href='../../assets/styles/styles.css'>
+    <body>
+        <div id="nav-bar">
+            <input id="logout" type="button" value="Logout">
+            <a href="../../auth/pkce/api-menu.html"> Back to API menu </a>
+        </div>
+
+        <div class="content">
+            <div>
+                <section>
+                    <h2>Address Book API</h2>
+                    <p>The Address Book API is a central point for any contact that is available to the user.
+                    The contact can represent either person's details such as name, phone number or job title,
+                    or a shared object with the phone number or e-mail address such as a Virtual Extension 
+                    or Resource Mailbox.
+                    </p>
+                    <div>
+                        <button id='getContacts'>Get Contacts</button>
+                        <details>
+                            <summary>Optional settings 
+                                <a href='https://developer.intermedia.com/api/spec/address_book/index.html#get-/address-book/v3/contacts'>Guide</a>
+                            </summary>
+                            <div>
+                                <input id="query" placeholder="query"></input>
+                            </div>
+                            <div>
+                                <input id="phone" placeholder="phone"></input>
+                            </div>
+                            <div> scope
+                                <select id="scope">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                </select>
+                            </div>
+                            <div>
+                                <h3>fields:</h3>
+                                <div>
+                                    <label for="horns">id</label>
+                                    <input type="checkbox" id="getContactsid" value="id"></input>
+                                </div>   
+                                <div>
+                                    <label for="horns">_all</label>
+                                    <input type="checkbox" id="getContacts_all" value="_all">
+                                </div> 
+                                <div>
+                                    <label for="horns">legacyId</label>
+                                    <input type="checkbox" id="getContactslegacyId" value="legacyId" disabled>
+                                    <div class="tooltip">Help
+                                        <span class="tooltiptext">legacyId value should be accompanied with _all or id</span>
+                                    </div>
+                                </div>                      
+                            </div>
+                        </details>
+                    </div>
+                    <div>
+                        <button id='getUserDetails'>Get User Details</button>
+                        <details>
+                            <summary>Optional settings
+                                <a href='https://developer.intermedia.com/api/spec/address_book/index.html#get-/address-book/v3/contacts/_me'>Guide</a>
+                            </summary>
+                            <div>
+                                <h3>fields:</h3>
+                                <div>
+                                    <label for="horns">id</label>
+                                    <input type="checkbox" id="getUserDetailsid" value="id" placeholder="fields"></input>
+                                </div>
+                                <div>
+                                    <label for="horns">_all</label>
+                                    <input type="checkbox" id="getUserDetails_all" value="_all">
+                                </div> 
+                                <div>
+                                    <label for="horns">legacyId</label>
+                                    <input type="checkbox" id="getUserDetailslegacyId" value="legacyId" disabled>
+                                    <div class="tooltip">Help
+                                        <span class="tooltiptext">legacyId value should be accompanied with _all or id</span>
+                                    </div>
+                                </div>                         
+                            </div>
+                        </details>
+                    </div>
+                    <div>
+                        <button id='getContactsByJIDs'>Get contacts by JIDs</button>
+                        <input id="jids" placeholder="jids"></input>
+                        <details>
+                            <summary>Optional settings
+                                <a href='https://developer.intermedia.com/api/spec/address_book/index.html#post-/address-book/v3/contacts/_search'>Guide</a>
+                            </summary>
+                            <div>
+                                <h3>fields:</h3>
+                                <div>
+                                    <label for="horns">id</label>
+                                    <input type="checkbox" id="getContactsByJIDsid" value="id" placeholder="fields"></input>
+                                </div>    
+                                <div>
+                                    <label for="horns">_all</label>
+                                    <input type="checkbox" id="getContactsByJIDs_all" value="_all">
+                                </div>   
+                                <div>
+                                    <label for="horns">legacyId</label>
+                                    <input type="checkbox" id="getContactsByJIDslegacyId" value="legacyId" disabled>
+                                    <div class="tooltip">Help
+                                        <span class="tooltiptext">legacyId value should be accompanied with _all or id</span>
+                                    </div>
+                                </div>                   
+                            </div>
+                        </details>
+                    </div>
+                    <div>
+                        <button id='getSingleContact'>Get single contact</button>
+                        <input id="id" placeholder="id"></input>
+                        <details>
+                            <summary>Optional settings
+                                <a href='https://developer.intermedia.com/api/spec/address_book/index.html#get-/address-book/v3/contacts/{id}'>Guide</a>
+                            </summary>
+                            <div>
+                                <h3>fields</h3>
+                                <div>
+                                    <label for="horns">id</label>
+                                    <input type="checkbox" id="getSingleContactid" value="id" placeholder="fields"></input>
+                                </div>
+                                <div>
+                                    <label for="horns">_all</label>
+                                    <input type="checkbox" id="getSingleContact_all" value="_all">
+                                </div>  
+                                <div>
+                                    <label for="horns">legacyId</label>
+                                    <input type="checkbox" id="getSingleContactlegacyId" value="legacyId" disabled>
+                                    <div class="tooltip">Help
+                                        <span class="tooltiptext">legacyId value should be accompanied with _all or id</span>
+                                    </div>
+                                </div>                        
+                            </div>
+                        </details>
+                    </div>
+                </section>
+                <div>
+                    <h3>Output: </h3>
+                    <button id='clearLog'>Clear</button>
+                    <pre id='out'></pre>
+                </div>
+            </div>
+            <section id="avatars-section">
+                <h2>Avatars</h2>
+
+                <div class="block">
+                    <div class="text-info">
+                        To get avatar, copy the ID of the required avatar from 'Get contacts' response into the field below:
+                    </div>
+                    <input id='avatar-id' type="text" placeholder="avatar id" size="40">
+                    <button id='get-avatar'>Get avatar</button>
+                    <a class="link-to-guide" 
+                        href="https://developer.intermedia.com/api/spec/address_book/index.html#get-/address-book/v3/avatars/{avatarId}" 
+                        target="_blank">Get avatar guide</a>
+                    <div id="get-avatar-output"></div>
+                </div>
+        
+                <div class="block">
+                    <div class="text-info">
+                        To get an array of avatar, copy the IDs of the required avatars from 'Get contacts' response into the field below, separated by commas:
+                    </div>
+                    <input id='avatar-ids' type="text" placeholder="avatar ids" size="80">
+                    <button id='get-multiple-avatars'>Get multiple avatars</button>
+                    <a class="link-to-guide" 
+                        href="https://developer.intermedia.com/api/spec/address_book/index.html#post-/address-book/v3/avatars/_search" 
+                        target="_blank">Get multiple avatars guide</a>
+                    <div id="get-multiple-avatars-output"></div>
+                </div>
+            </section>       
+        </div>
+
+        <script src='../../assets/jwt-decode.js'></script>
+        <script src='../../assets/log.js'></script>
+        <script src='../../assets/pkce-auth-session-manager.js'></script>
+        <script src='../../assets/make-request-factory.js'></script>
+        <script src='address-book-api.js'></script>
+        <script src='assets/address-book.js'></script>
+    </body>
+</html>
+

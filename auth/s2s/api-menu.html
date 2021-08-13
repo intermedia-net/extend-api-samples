@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>API menu</title>
+        <link rel='stylesheet' href='../../assets/styles/styles.css'>
+    </head>
+    <body>
+        <div id="nav-bar">
+            <input id="logout" type="button" value="Logout">
+        </div>
+
+        <div>
+            <a href="../../api/analytics/analytics.html"> Analytics </a>
+        </div>
+
+        <script src='../../assets/s2s-auth-session-manager.js'></script>
+        <script>
+            if(!isAuthorized()){
+                window.location.href = "auth.html";
+            }
+
+            document.getElementById('logout').addEventListener("click", () => logout(), false);
+        </script>   
+    </body>
+</html>
+

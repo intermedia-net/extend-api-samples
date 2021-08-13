@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Meeting API samples</title>
+        <link rel='stylesheet' href='../../assets/styles/styles.css'>
+    </head>
+    <body>
+        <div id="nav-bar">
+            <input id="logout" type="button" value="Logout">
+            <a href="../../auth/pkce/api-menu.html"> Back to API menu </a>
+        </div>
+
+        <div class="content">
+            <div class="block">
+                <h3>Start meeting</h3>
+                <div class="text-info">
+                    Firstly, we need to start a new meeting:
+                </div>
+                <button id='start-meeting'>Start meeting</button>
+                <a class="link-to-guide" 
+                    href="https://developer.intermedia.com/api/spec/meeting/index.html#post-/meetings/v1/meeting/start/details" 
+                    target="_blank">Start meeting guide</a>
+            </div>
+            <div class="block">                
+                <h3>Get user details</h3>
+                <div class="text-info">
+                    Also we can get information about this user:
+                </div>
+                <button id='get-user-details'>Get user details</button>
+                <a class="link-to-guide" 
+                    href="https://developer.intermedia.com/api/spec/meeting/index.html#get-/meetings/v1/user" 
+                    target="_blank">Get user details guide</a>
+            </div>
+            <div class="block">
+                <h3>Get meeting details</h3>
+                <div class="text-info">
+                    After the meeting starts, we can get information about the meeting by specifying the meeting code from the "Start meeting" response:
+                </div>
+                <input id="meeting-code" type="text">
+                <button id='get-meeting-details'>Get meeting details</button>
+                <a class="link-to-guide" 
+                    href="https://developer.intermedia.com/api/spec/meeting/index.html#get-/meetings/v1/meeting/{meetingCode}" 
+                    target="_blank">Get meeting details guide</a>
+            </div>
+        </div>
+        
+        <div>
+            <h3>Output: </h3>
+            <button id='clearLog'>Clear</button>
+            <pre id='out'></pre>
+        </div>
+
+        <script src='../../assets/log.js'></script>
+        <script src='../../assets/pkce-auth-session-manager.js'></script>
+        <script src="../../assets/make-request-factory.js"></script>
+        <script src='meetings-api.js'></script>
+        <script src='assets/meetings.js'></script>
+    </body>
+</html>
+
